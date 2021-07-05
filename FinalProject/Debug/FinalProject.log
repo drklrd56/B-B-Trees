@@ -1,0 +1,610 @@
+﻿Build started 1/8/2019 8:40:29 PM.
+     1>Project "C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\FinalProject\FinalProject.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\FinalProject.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source.cpp
+         Source.cpp
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(707): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(672) : while compiling class template member function 'void BPlusTree<T>::search(BPlusTree<T>::BPlusNode *,Key<T>,Key<T>,bool,int,std::string,std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BPlusInterface.h(109) : see reference to class template instantiation 'BPlusTree<T>' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BPlusInterface.h(106) : while compiling class template member function 'void BPlusInterface<T>::Menu(int,std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+                 C:\Users\PAKLAP.pk\Documents\Visual Studio 2010\Projects\FinalProject\Resources\Interface.h(102) : see reference to class template instantiation 'BPlusInterface<T>' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(707): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(672) : while compiling class template member function 'void BPlusTree<T>::search(BPlusTree<T>::BPlusNode *,Key<T>,Key<T>,bool,int,std::string,std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BPlusInterface.h(109) : see reference to class template instantiation 'BPlusTree<T>' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BPlusInterface.h(106) : while compiling class template member function 'void BPlusInterface<T>::Menu(int,std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+                 C:\Users\PAKLAP.pk\Documents\Visual Studio 2010\Projects\FinalProject\Resources\Interface.h(107) : see reference to class template instantiation 'BPlusInterface<T>' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(707): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(672) : while compiling class template member function 'void BPlusTree<T>::search(BPlusTree<T>::BPlusNode *,Key<T>,Key<T>,bool,int,std::string,std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BPlusInterface.h(109) : see reference to class template instantiation 'BPlusTree<T>' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BPlusInterface.h(106) : while compiling class template member function 'void BPlusInterface<T>::Menu(int,std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 C:\Users\PAKLAP.pk\Documents\Visual Studio 2010\Projects\FinalProject\Resources\Interface.h(112) : see reference to class template instantiation 'BPlusInterface<T>' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(327): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(321) : while compiling class template member function 'void BTree<T>::Display(List<Key<T>> &,std::string,int)'
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BInterface.h(101) : see reference to class template instantiation 'BTree<T>' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BInterface.h(98) : while compiling class template member function 'void BInterface<T>::Menu(int,std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+                 C:\Users\PAKLAP.pk\Documents\Visual Studio 2010\Projects\FinalProject\Resources\Interface.h(83) : see reference to class template instantiation 'BInterface<T>' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(357): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(351) : while compiling class template member function 'void BTree<T>::Update(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(327): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(321) : while compiling class template member function 'void BTree<T>::Display(List<Key<T>> &,std::string,int)'
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BInterface.h(101) : see reference to class template instantiation 'BTree<T>' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BInterface.h(98) : while compiling class template member function 'void BInterface<T>::Menu(int,std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+                 C:\Users\PAKLAP.pk\Documents\Visual Studio 2010\Projects\FinalProject\Resources\Interface.h(88) : see reference to class template instantiation 'BInterface<T>' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(357): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(351) : while compiling class template member function 'void BTree<T>::Update(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(327): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(321) : while compiling class template member function 'void BTree<T>::Display(List<Key<T>> &,std::string,int)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BInterface.h(101) : see reference to class template instantiation 'BTree<T>' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\Resources\BInterface.h(98) : while compiling class template member function 'void BInterface<T>::Menu(int,std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 C:\Users\PAKLAP.pk\Documents\Visual Studio 2010\Projects\FinalProject\Resources\Interface.h(93) : see reference to class template instantiation 'BInterface<T>' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(357): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(351) : while compiling class template member function 'void BTree<T>::Update(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(495): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(490) : while compiling class template member function 'void BPlusTree<T>::Display(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(528): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(522) : while compiling class template member function 'void BPlusTree<T>::Update(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(495): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(490) : while compiling class template member function 'void BPlusTree<T>::Display(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(528): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(522) : while compiling class template member function 'void BPlusTree<T>::Update(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(495): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(490) : while compiling class template member function 'void BPlusTree<T>::Display(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(528): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(522) : while compiling class template member function 'void BPlusTree<T>::Update(List<Key<T>> &,int,std::string,std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(53): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(37) : while compiling class template member function 'void BTree<T>::BTreeNode::DiskWrite(std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(807) : see reference to class template instantiation 'BTree<T>::BTreeNode' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(806) : while compiling class template member function 'BTree<T>::~BTree(void)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(91): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(81) : while compiling class template member function 'void BTree<T>::BTreeNode::DiskRead(std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(53): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(37) : while compiling class template member function 'void BTree<T>::BTreeNode::DiskWrite(std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(807) : see reference to class template instantiation 'BTree<T>::BTreeNode' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(806) : while compiling class template member function 'BTree<T>::~BTree(void)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(91): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(81) : while compiling class template member function 'void BTree<T>::BTreeNode::DiskRead(std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(53): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(37) : while compiling class template member function 'void BTree<T>::BTreeNode::DiskWrite(std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(807) : see reference to class template instantiation 'BTree<T>::BTreeNode' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(806) : while compiling class template member function 'BTree<T>::~BTree(void)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(91): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(81) : while compiling class template member function 'void BTree<T>::BTreeNode::DiskRead(std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(195): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<int>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(181) : while compiling class template member function 'void BPlusTree<T>::leafNode::writeNode(std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(285) : see reference to class template instantiation 'BPlusTree<T>::leafNode' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(280) : while compiling class template member function 'BPlusTree<T>::BPlusNode *BPlusTree<T>::createNode(std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(222): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(212) : while compiling class template member function 'void BPlusTree<T>::leafNode::readNode(std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(105): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(95) : while compiling class template member function 'void BPlusTree<T>::InternalNode::readNode(std::string)'
+                 with
+                 [
+                     T=int
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(292) : see reference to class template instantiation 'BPlusTree<T>::InternalNode' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(195): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<float>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(181) : while compiling class template member function 'void BPlusTree<T>::leafNode::writeNode(std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(285) : see reference to class template instantiation 'BPlusTree<T>::leafNode' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(280) : while compiling class template member function 'BPlusTree<T>::BPlusNode *BPlusTree<T>::createNode(std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(222): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(212) : while compiling class template member function 'void BPlusTree<T>::leafNode::readNode(std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(105): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(95) : while compiling class template member function 'void BPlusTree<T>::InternalNode::readNode(std::string)'
+                 with
+                 [
+                     T=float
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(292) : see reference to class template instantiation 'BPlusTree<T>::InternalNode' being compiled
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(195): warning C4620: no postfix form of 'operator ++' found for type 'List<T>::iterator', using prefix form
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\List.h(24) : see declaration of 'List<T>::iterator'
+                 with
+                 [
+                     T=Key<std::string>
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(181) : while compiling class template member function 'void BPlusTree<T>::leafNode::writeNode(std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(285) : see reference to class template instantiation 'BPlusTree<T>::leafNode' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(280) : while compiling class template member function 'BPlusTree<T>::BPlusNode *BPlusTree<T>::createNode(std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(222): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(212) : while compiling class template member function 'void BPlusTree<T>::leafNode::readNode(std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(105): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(95) : while compiling class template member function 'void BPlusTree<T>::InternalNode::readNode(std::string)'
+                 with
+                 [
+                     T=std::string
+                 ]
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(292) : see reference to class template instantiation 'BPlusTree<T>::InternalNode' being compiled
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(473): warning C4018: '>=' : signed/unsigned mismatch
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(454) : while compiling class template member function 'bool BTree<T>::replace(std::string &,int,std::string,std::string,int)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(516): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(522): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(473): warning C4018: '>=' : signed/unsigned mismatch
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(454) : while compiling class template member function 'bool BTree<T>::replace(std::string &,int,std::string,std::string,int)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(516): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(522): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(473): warning C4018: '>=' : signed/unsigned mismatch
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(454) : while compiling class template member function 'bool BTree<T>::replace(std::string &,int,std::string,std::string,int)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(516): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BTree.h(522): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(576): warning C4018: '>=' : signed/unsigned mismatch
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(557) : while compiling class template member function 'bool BPlusTree<T>::replace(std::string &,int,std::string,std::string,int)'
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(619): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(625): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(576): warning C4018: '>=' : signed/unsigned mismatch
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(557) : while compiling class template member function 'bool BPlusTree<T>::replace(std::string &,int,std::string,std::string,int)'
+                 with
+                 [
+                     T=float
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(619): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(625): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(576): warning C4018: '>=' : signed/unsigned mismatch
+                 c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(557) : while compiling class template member function 'bool BPlusTree<T>::replace(std::string &,int,std::string,std::string,int)'
+                 with
+                 [
+                     T=std::string
+                 ]
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(619): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\BPlusTree.h(625): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\bplustree.h(303): warning C4715: 'BPlusTree<int>::createNode' : not all control paths return a value
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\bplustree.h(303): warning C4715: 'BPlusTree<float>::createNode' : not all control paths return a value
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\bplustree.h(303): warning C4715: 'BPlusTree<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::createNode' : not all control paths return a value
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\list.h(208): warning C4715: 'List<Key<int> >::getHeadValue' : not all control paths return a value
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\list.h(208): warning C4715: 'List<Key<float> >::getHeadValue' : not all control paths return a value
+     1>c:\users\paklap.pk\documents\visual studio 2010\projects\finalproject\resources\list.h(208): warning C4715: 'List<Key<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::getHeadValue' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\Debug\FinalProject.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FinalProject.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\Debug\FinalProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\Debug\FinalProject.lib" /MACHINE:X86 Debug\Source.obj
+         Debug\BPlusTree.obj
+         LINK : C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\Debug\FinalProject.exe not found or not built by the last incremental link; performing full link
+         FinalProject.vcxproj -> C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\Debug\FinalProject.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\Debug\FinalProject.exe;#1" /manifest Debug\FinalProject.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\FinalProject.unsuccessfulbuild".
+         Touching "Debug\FinalProject.lastbuildstate".
+     1>Done Building Project "C:\Users\PAKLAP.pk\documents\visual studio 2010\Projects\FinalProject\FinalProject\FinalProject.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.46

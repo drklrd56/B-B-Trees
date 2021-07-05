@@ -1,0 +1,10 @@
+3Node33L
+1
+2
+Keys : 
+0|2019|../Resources/OriginalFiles/test_1.csv|26
+0|2019|../Resources/OriginalFiles/test_2.csv|26
+1|2020|../Resources/OriginalFiles/test_1.csv|27
+1|2020|../Resources/OriginalFiles/test_2.csv|27
+nextFile : 
+

@@ -1,0 +1,469 @@
+#pragma once
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <typeinfo>
+#include <sstream>
+#include "Resources\Key.h"
+#include "Resources\List.h"
+
+using namespace std;
+
+template<typename T>
+class BTree
+{
+	class BTreeNode	// a simple BTREE NODE
+	{
+	public:
+		string Name;	// file Name to identify the file in folders
+		List<Key<T>> *keys;		// Node data
+		string *Children;	// Childrens
+		int numKeys;	// total present keys
+		bool isleaf;
+		BTreeNode(int Degree,string Name)
+		{
+			this->Name = Name;	// used in file System
+			isleaf = true;
+			numKeys = 0;
+			Children = new string[Degree + 1];
+			keys = new List<Key<T>>[Degree];
+		}
+		void DiskWrite(string FolderName)
+		{
+			ofstream OutFile;
+			string fileName ="../Resources/NodesBTree/"+FolderName+"/"+ Name+".txt";
+			OutFile.open(fileName);
+			if (OutFile.is_open())
+			{
+				// open a file in the folder to know about structuring
+				OutFile << Name << endl;	
+				Key<T> head;
+				int index = 0;
+				OutFile << isleaf << endl;
+				OutFile << numKeys << endl;
+				// write keys
+				OutFile << "Keys : " << endl;
+				while (index < numKeys)
+				{
+					for(List<Key<T>>::iterator Index=keys[index].begin(); Index.iterate();Index++)
+					{
+						head=*Index;
+						OutFile <<index<<"|"<<head.ID_ELEMENT << "|" << head.path_Directory <<"|"<< head.linePointer;
+						OutFile << '\n';
+					}
+					index++;
+				}
+				index = 0;
+				// write Chidren
+				OutFile << "Children : " << endl;
+				while (index < numKeys+1)
+				{
+					if (Children[index] != "")
+					{
+						OutFile << Children[index];
+						if (index  < numKeys)
+							OutFile << ',';
+					}
+					index++;
+				}
+				OutFile <<endl<< "END";
+				OutFile.close();
+			}
+			else
+				cout << "ERROR.. Directory inaccessable." << endl;
+		}
+		void DiskRead(string Name)
+		{
+			ifstream inFile;
+			inFile.open(Name);
+			if (inFile.is_open())
+			{
+
+				string Line, ID;
+				getline(inFile, Line, '\n');	// file Name
+				this->Name = Line;
+				getline(inFile, Line, '\n');	// isLeaf
+				isleaf = stoi(Line);	
+				getline(inFile, Line, '\n');	// numKeys
+				numKeys = stoi(Line);
+				getline(inFile, Line, '\n');	// Keys :
+				int index = 0;
+				int current_pos = 0;
+				int spaceCount = 0;
+				Key<T>obj;
+				while (Line != "Children : ")	
+				{
+					getline(inFile, Line, '\n');	// a Keys of type index|ID|Path|Line
+					if (Line == "Children : ")
+						break;
+					spaceCount = 0;
+					index = -1;
+					while (Line!="")
+					{
+						current_pos = Line.find("|");	// find line |
+						if (current_pos == string::npos)
+						{
+							obj.linePointer = stoi(Line.substr(0, current_pos));
+							Line.erase(0, Line.length());
+						}
+						else
+						{
+							if (spaceCount == 0)
+								index = stoi(Line.substr(0, current_pos));
+							if(spaceCount==1)
+								obj.ID_ELEMENT = Line.substr(0, current_pos);
+							if(spaceCount==2)
+								obj.path_Directory = Line.substr(0, current_pos);
+							Line.erase(0, current_pos + 1);
+							spaceCount++;
+						}
+					}
+					if (index>-1)
+						keys[index].insert(obj);
+				}
+				getline(inFile, Line, '\n');
+				index = 0;
+				// read the children
+				while (Line!="")
+				{
+					current_pos = Line.find(",");
+					if (current_pos==string::npos)
+					{
+						Children[index] = Line.substr(0, current_pos);
+						Line.erase(0, Line.length());
+					}
+					else
+					{
+						Children[index] = Line.substr(0, current_pos);
+						index++;
+						Line.erase(0, current_pos + 1);
+					}
+				}
+			}
+			else
+				cout << "FILE PATH NOT FOUND." << endl;
+		}
+		~BTreeNode()
+		{
+			for (int Index = 0; Index < numKeys; Index++)	// free list memory
+				keys[Index].makeNull();
+			delete[] keys;	// delete keys
+			delete[] Children;	// delete Children
+		}
+	};
+	BTreeNode *root;
+	int TreeDegree;	
+	int median;
+	int nodeNumber;
+	string IDFolder;
+	BTreeNode* createNode(string Path)	// open the file path create a new Node return
+	{
+		BTreeNode* newNode = new BTreeNode(TreeDegree, Path);	
+		Path += ".txt";
+		newNode->DiskRead("../Resources/NodesBTree/"+ IDFolder+"/"+Path);
+		return newNode;
+	}
+	void WriteRoot(BTreeNode *root, string folderName)	// tell about the node that is root its use in case the new degree is same as the previous
+	{
+		ofstream inFile;	
+		inFile.open("../Resources/NodesBTree/" + folderName +"/"+ "root.txt");	// File PATH
+		if (inFile.is_open())
+		{
+			inFile << root->Name << "," << TreeDegree;	
+			inFile.close();
+		}
+		else
+			cout << "ROOT NOT WRITTEN." << endl;
+	}
+	void insert(BTreeNode* tree, Key<T>& insertValue)		// search check split in children insert at leaf or at index where key found(list)
+	{
+		if (tree->isleaf)		// insert in case leaf
+		{
+			int insertIndex = tree->numKeys - 1;
+			bool equal=false;
+			while (insertIndex >= 0) // find index where element can to inserted if it's equal to another array member
+			{
+				if (tree->keys[insertIndex] == insertValue)
+				{
+					tree->keys[insertIndex].insert(insertValue);
+					equal = true;
+					break;
+				}
+				insertIndex--;
+			}
+			if (equal == false)
+			{
+				insertIndex = tree->numKeys - 1;
+				while (insertIndex >= 0 && tree->keys[insertIndex] > insertValue) // shift elements to make space for new element
+				{
+					tree->keys[insertIndex + 1] = tree->keys[insertIndex];
+					insertIndex--;
+				}
+				tree->keys[insertIndex + 1].makeNull();
+				tree->keys[insertIndex + 1].insert(insertValue);  //insert Element
+				tree->numKeys++;
+			}
+			tree->DiskWrite(IDFolder);
+		}
+		else
+		{    // if not leaf check in children find the apropriate position and recusive call
+			int insertPoint = tree->numKeys - 1;
+			while (insertPoint >= 0 && tree->keys[insertPoint] > insertValue)
+			{
+				if (tree->keys[insertPoint] == insertValue)	// if non leaf node == value insert in the list at this index of keys
+				{
+					tree->keys[insertPoint].insert(insertValue);	
+					tree->DiskWrite(IDFolder);	// write the node to drive
+					return;
+				}
+				insertPoint--;
+			}
+			// even and odd case
+			int divide;
+			if (TreeDegree % 2 == 0)	
+				divide = 2 * median;
+			else
+				divide = 2 * median - 1;
+			BTreeNode *newNode = createNode(tree->Children[insertPoint + 1]);	// read from disk at load children to memory
+			if (newNode->numKeys == divide)	// full node === preActive split
+			{
+				// If the child is full, then split  
+				split(tree, newNode, insertPoint + 1);	// split it
+			}
+			insert(newNode, insertValue);	// recursive call
+			delete newNode;	// free memory by remove all children
+		}
+	}
+	void split(BTreeNode *parent, BTreeNode *child, int Index)
+	{
+		stringstream name;
+		name<<nodeNumber;
+		string nodeName = "Node" + name.str();	// Assign a Unique Name to the newNode
+		nodeNumber++;
+		BTreeNode* newBTreeNode = new BTreeNode(TreeDegree,nodeName); // Create a tempBTreeNode
+		newBTreeNode->isleaf = child->isleaf;
+		newBTreeNode->numKeys = median-1;
+		int index = 0;
+		int loopInVariant;
+		if (TreeDegree % 2 == 0)
+			loopInVariant = median;
+		else
+			loopInVariant = median - 1;
+		for (; index < loopInVariant; index++)
+		{
+			newBTreeNode->keys[index] = child->keys[index + median]; // copy the keys from or after the median to newNode (Even AND ODD case)
+		}
+		if (child->isleaf == false)
+		{
+			if (TreeDegree % 2 == 0)
+				loopInVariant = median + 1;
+			else
+				loopInVariant = median;
+			for (index = 0; index < loopInVariant; index++)
+			{
+				newBTreeNode->Children[index] = child->Children[index + median];	// copy the Children from or after the median to newNode (Even AND ODD case)
+			}
+		}
+		child->numKeys = median - 1;	// if degree 3 median-1= 1  if child key == 1 2 3 after this its only 1
+		for (index = parent->numKeys; index >= Index + 1; index--)
+		{
+			parent->Children[index + 1] = parent->Children[index];	//shift to make space for newChild
+		}
+		parent->Children[Index + 1] = newBTreeNode->Name;	// and the newNode to parent Children Child is already a child before coming in the function
+		// Index == child and Index+1 == newNode 
+		for (index = parent->numKeys - 1; index >= Index; index--)
+		{
+			parent->keys[index + 1] = parent->keys[index];	// shift the parent to make space for the key
+		}
+		// the median value goes to parent example child with 1 2 3 .. 2 moves to parent
+		parent->keys[Index] = child->keys[median - 1];
+		parent->numKeys += 1;	
+		// Write PARENT<CHILDREN<NEWNODE to file
+		child->DiskWrite(IDFolder);
+		parent->DiskWrite(IDFolder);
+		newBTreeNode->DiskWrite(IDFolder);
+		delete newBTreeNode;
+	}
+	void inorder(BTreeNode* tree)
+	{
+		if (tree->isleaf)
+		{
+			for (int i = 0; i < tree->numKeys; i++)
+			{
+				tree->keys[i].DisplayList();
+			}
+		}
+		else
+		{
+			for (int i = 0; i < tree->numKeys+1; i++)
+			{
+				inorder(tree->Children[i]);
+				if (i < tree->numKeys)
+					tree->keys[i].DisplayList();
+			}
+		}
+	}
+public:
+	BTree(int Degree = 3)
+	{
+		if (Degree < 3)
+			cout << "ERROR. Degree Not Valid" << endl;
+		TreeDegree = Degree;
+		if (Degree % 2 != 0)
+			median = (Degree / 2) + 1;
+		else
+			median = (Degree / 2);
+		root = NULL;
+		nodeNumber = 1;
+	}
+	void insertNode(Key<T> value,string ID)
+	{
+		if(IDFolder=="")
+			IDFolder = "BIN"+ID;
+		int divide;
+		if (TreeDegree % 2 == 0)
+			divide = 2 * median;
+		else
+			divide = 2 * median - 1;
+		stringstream name;
+		name<<nodeNumber;
+		string nodeName = "Node" + name.str();
+		if (root == NULL)
+		{
+			root = new BTreeNode(TreeDegree,nodeName);
+			nodeNumber++;
+			root->numKeys = 0;
+			root->isleaf = true;
+			root->keys[0].insert(value);
+			root->numKeys = 1;
+			root->DiskWrite(IDFolder);
+		}
+		else
+		{
+			if (root->numKeys >=divide)
+			{
+				//string nodeName = "Node" + to_string(nodeNumber);
+				nodeNumber++;
+				BTreeNode* newBTreeNode = new BTreeNode(TreeDegree,nodeName);
+				newBTreeNode->Children[0] = root->Name;
+				newBTreeNode->isleaf = false;
+				split(newBTreeNode, root, 0);
+				int Index = 0;
+				if (newBTreeNode->keys[0] < value)
+					Index++;
+				BTreeNode *newNode = createNode(newBTreeNode->Children[Index]);
+				insert(newNode, value);
+				delete newNode;
+				delete root;
+				root = newBTreeNode;
+
+			}
+			else
+				insert(root, value);
+		}
+	}
+	void BuildTree(string Path,string IDON)
+	{
+		cout << Path << endl;
+		ifstream inFile;
+		inFile.open(Path);
+		if (inFile.is_open())
+		{
+			string Line;
+			Key<T> obj;
+			obj.path_Directory = Path;
+			getline(inFile, Line, '\n');
+			int idPoint = 0;
+			size_t current_pos = 0;
+			while (Line != "")
+			{
+				current_pos = Line.find(",");
+				if (current_pos == string::npos)
+				{
+					if (IDON == Line.substr(0, current_pos))
+						break;
+					Line.erase(0, Line.length());
+				}
+				else
+				{
+					if (IDON == Line.substr(0, current_pos))
+						break;
+					Line.erase(0, current_pos + 1);
+				}
+				idPoint++;
+			}
+			int linecount = 1, count = 0;
+			while (getline(inFile, Line, '\n'))
+			{
+				count = 0;
+				while (Line!="")
+				{
+					current_pos = Line.find(",");
+					if (current_pos == string::npos)
+					{
+						if (count == idPoint)
+						{
+							obj.ID_ELEMENT = Line.substr(0, current_pos);
+							break;
+						}
+						Line.erase(0, Line.length());
+					}
+					else
+					{
+						if (count == idPoint)
+						{
+							obj.ID_ELEMENT = Line.substr(0, current_pos);
+							break;
+						}
+						Line.erase(0, current_pos + 1);
+						if (Line[0] == '\"')
+						{
+							current_pos = Line.find("\",");
+							Line.erase(0, current_pos + 2);
+							count++;
+						}
+					}
+					count++;
+				}
+				current_pos=obj.ID_ELEMENT.find(",");
+				if (current_pos != string::npos)
+				{
+					obj.ID_ELEMENT = obj.ID_ELEMENT.substr(0, current_pos);
+				}
+				obj.linePointer = linecount;
+				linecount++;
+				insertNode(obj,IDON);
+			}
+		}
+		else
+		{
+			cout << "ERROR.GIVEN PATH NOT FOUND." << endl;
+		}
+		WriteRoot(root, IDFolder);
+	}
+	/*void deleteBTreeNode()
+	{
+
+	}
+	void findBTreeNode()
+	{
+
+	}
+	~BTree()
+	{
+	}*/
+
+	void DeleteNode(key<T> value,string ID)
+	{
+
+	}
+	void Display()
+	{
+		inorder(root);
+	}
+	virtual ~BTree()
+	{
+		delete root;
+	}
+};

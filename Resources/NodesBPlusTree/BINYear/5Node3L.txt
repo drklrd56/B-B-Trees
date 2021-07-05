@@ -1,0 +1,14 @@
+5Node3L
+1
+2
+Keys : 
+0|2002|../Resources/OriginalFiles/test_1.csv|7
+0|2002|../Resources/OriginalFiles/test_1.csv|8
+0|2002|../Resources/OriginalFiles/test_2.csv|7
+0|2002|../Resources/OriginalFiles/test_2.csv|8
+1|2003|../Resources/OriginalFiles/test_1.csv|9
+1|2003|../Resources/OriginalFiles/test_1.csv|10
+1|2003|../Resources/OriginalFiles/test_2.csv|9
+1|2003|../Resources/OriginalFiles/test_2.csv|10
+nextFile : 
+5Node4L

@@ -1,0 +1,10 @@
+5Node11L
+1
+2
+Keys : 
+0|2016|../Resources/OriginalFiles/test_1.csv|23
+0|2016|../Resources/OriginalFiles/test_2.csv|23
+1|2017|../Resources/OriginalFiles/test_1.csv|24
+1|2017|../Resources/OriginalFiles/test_2.csv|24
+nextFile : 
+5Node12L
